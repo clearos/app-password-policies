@@ -1,10 +1,12 @@
 
 Name: app-password-policies
+Group: ClearOS/Apps
 Version: 6.2.0.beta3
 Release: 1%{dist}
 Summary: Password Policies
 License: GPLv3
-Group: ClearOS/Apps
+Packager: ClearFoundation
+Vendor: ClearFoundation
 Source: %{name}-%{version}.tar.gz
 Buildarch: noarch
 Requires: %{name}-core = %{version}-%{release}
@@ -14,17 +16,17 @@ Requires: app-groups
 Requires: app-users
 
 %description
-Password Policies description...
+The Password Policy module adds functionality to the directory server to enforce password creation rules.  This enforces users to create passwords that meet your criteria and helps to make your system more secure.
 
 %package core
 Summary: Password Policies - APIs and install
-License: LGPLv3
 Group: ClearOS/Libraries
+License: LGPLv3
 Requires: app-base-core
 Requires: app-openldap-core
 
 %description core
-Password Policies description...
+The Password Policy module adds functionality to the directory server to enforce password creation rules.  This enforces users to create passwords that meet your criteria and helps to make your system more secure.
 
 This package provides the core API and libraries.
 
