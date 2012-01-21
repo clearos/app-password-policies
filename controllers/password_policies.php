@@ -103,8 +103,8 @@ class Password_Policies extends ClearOS_Controller
 
         $this->load->module('accounts/status');
 
-        if ($this->status->unhappy('openldap')) {
-            $this->status->widget('password_policies', 'openldap');
+        if ($this->status->unhappy('openldap_directory')) {
+            $this->status->widget('password_policies', 'openldap_directory');
             return;
         }
 
