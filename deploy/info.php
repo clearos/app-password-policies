@@ -34,3 +34,12 @@ $app['requires'] = array(
 $app['core_requires'] = array(
     'app-openldap-core',
 );
+
+$app['core_file_manifest'] = array(
+   'password-policies-synchronize' => array(
+        'target' => '/usr/sbin/password-policies-synchronize',
+        'mode' => '0755',
+        'owner' => 'root',
+        'group' => 'root',
+    )
+);

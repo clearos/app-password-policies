@@ -167,6 +167,21 @@ class Password_Policies extends Engine
     }
 
     /**
+     * Synchronizes policies across different drivers.
+     *
+     * @return void
+     * @throws Engine_Exception
+     */
+
+    public function synchronize()
+    {
+        clearos_profile(__METHOD__, __LINE__);
+
+        $settings = $this->get_default_policy();
+        $this->set_default_policy($settings);
+    }
+
+    /**
      * Applies default policy to all users.
      *
      * @return void

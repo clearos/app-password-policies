@@ -39,6 +39,7 @@ This package provides the core API and libraries.
 mkdir -p -m 755 %{buildroot}/usr/clearos/apps/password_policies
 cp -r * %{buildroot}/usr/clearos/apps/password_policies/
 
+install -D -m 0755 packaging/password-policies-synchronize %{buildroot}/usr/sbin/password-policies-synchronize
 
 %post
 logger -p local6.notice -t installer 'app-password-policies - installing'
@@ -81,3 +82,4 @@ exit 0
 /usr/clearos/apps/password_policies/deploy
 /usr/clearos/apps/password_policies/language
 /usr/clearos/apps/password_policies/libraries
+/usr/sbin/password-policies-synchronize
