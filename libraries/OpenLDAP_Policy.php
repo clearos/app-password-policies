@@ -178,8 +178,8 @@ class OpenLDAP_Policy extends Engine
             $policy_attributes['pwdFailureCountInterval'] = '30';
             $policy_attributes['pwdGraceAuthNLimit'] = '5';
             $policy_attributes['pwdInHistory'] = '5';
-            $policy_attributes['pwdLockout'] = 'FALSE';
-            $policy_attributes['pwdLockoutDuration'] = '0';
+            $policy_attributes['pwdLockout'] = 'TRUE';
+            $policy_attributes['pwdLockoutDuration'] = '600';
             $policy_attributes['pwdMaxAge'] = '0';
             $policy_attributes['pwdMaxFailure'] = '5';
             $policy_attributes['pwdMinAge'] = '0';
@@ -214,14 +214,19 @@ class OpenLDAP_Policy extends Engine
 
         // Update default password policy object
         //--------------------------------------
+        // The pwdLockout flag doesn't seem to do anything.  However, setting 
+        // the pwdMaxFailure to 0 seems to be the effective way to disable the
+        // bad login lockout feature.
 
         $attributes['pwdMaxAge'] = $settings['maximum_age'];
         $attributes['pwdMinAge'] = $settings['minimum_age'];
         $attributes['pwdMinLength'] = $settings['minimum_length'];
         $attributes['pwdInHistory'] = $settings['history_size'];
         $attributes['pwdLockout'] = ($settings['bad_password_lockout']) ? 'TRUE' : 'FALSE';
+        $attributes['pwdMaxFailure'] = ($settings['bad_password_lockout']) ? 5 : 0;
 
         $ldaph->modify($dn, $attributes);
+        $ldaph->reset();
     }
 
     /**
