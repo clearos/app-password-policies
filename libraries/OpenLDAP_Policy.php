@@ -226,7 +226,6 @@ class OpenLDAP_Policy extends Engine
         $attributes['pwdMaxFailure'] = ($settings['bad_password_lockout']) ? 5 : 0;
 
         $ldaph->modify($dn, $attributes);
-        $ldaph->reset();
     }
 
     /**
