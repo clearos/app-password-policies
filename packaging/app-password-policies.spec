@@ -1,7 +1,7 @@
 
 Name: app-password-policies
 Epoch: 1
-Version: 1.0.10
+Version: 1.1.0
 Release: 1%{dist}
 Summary: Password Policies
 License: GPLv3
@@ -18,7 +18,7 @@ Requires: app-users
 The Password Policy module adds functionality to the directory server to enforce password creation rules.  This enforces users to create passwords that meet your criteria and helps to make your system more secure.
 
 %package core
-Summary: Password Policies - APIs and install
+Summary: Password Policies - Core
 License: LGPLv3
 Group: ClearOS/Libraries
 Requires: app-base-core
