@@ -15,7 +15,7 @@ Requires: app-groups
 Requires: app-users
 
 %description
-The Password Policy module adds functionality to the directory server to enforce password creation rules.  This enforces users to create passwords that meet your criteria and helps to make your system more secure.
+The Password Policy app is used to fine tune user password creation rules.  This enforces users to create passwords that meet your criteria and helps to make your system more secure.
 
 %package core
 Summary: Password Policies - Core
@@ -25,7 +25,7 @@ Requires: app-base-core
 Requires: app-openldap-core
 
 %description core
-The Password Policy module adds functionality to the directory server to enforce password creation rules.  This enforces users to create passwords that meet your criteria and helps to make your system more secure.
+The Password Policy app is used to fine tune user password creation rules.  This enforces users to create passwords that meet your criteria and helps to make your system more secure.
 
 This package provides the core API and libraries.
 
