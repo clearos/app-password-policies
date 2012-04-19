@@ -1,6 +1,6 @@
 <?php
 $lang['password_policies_app_name'] = 'Password Policies';
-$lang['password_policies_app_description'] = 'The Password Policy module adds functionality to the directory server to enforce password creation rules.  This enforces users to create passwords that meet your criteria and helps to make your system more secure.';
+$lang['password_policies_app_description'] = 'The Password Policy app is used to fine tune user password creation rules.  This enforces users to create passwords that meet your criteria and helps to make your system more secure.';
 $lang['password_policies_history_size'] = 'History Size';
 $lang['password_policies_maximum_password_age'] = 'Maximum Password Age';
 $lang['password_policies_minimum_password_age'] = 'Minimum Password Age';
