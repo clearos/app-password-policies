@@ -1,7 +1,7 @@
 
 Name: app-password-policies
 Epoch: 1
-Version: 1.1.0
+Version: 1.6.5
 Release: 1%{dist}
 Summary: Password Policies
 License: GPLv3
@@ -15,7 +15,7 @@ Requires: app-groups
 Requires: app-users
 
 %description
-The Password Policy app is used to fine tune user password creation rules.  This enforces users to create passwords that meet your criteria and helps to make your system more secure.
+The Password Policy app is used to fine tune user password policy rules.  This enforces passwords that meet your criteria and helps to make your system more secure.
 
 %package core
 Summary: Password Policies - Core
@@ -25,7 +25,7 @@ Requires: app-base-core
 Requires: app-openldap-core
 
 %description core
-The Password Policy app is used to fine tune user password creation rules.  This enforces users to create passwords that meet your criteria and helps to make your system more secure.
+The Password Policy app is used to fine tune user password policy rules.  This enforces passwords that meet your criteria and helps to make your system more secure.
 
 This package provides the core API and libraries.
 
@@ -75,7 +75,6 @@ exit 0
 %files core
 %defattr(-,root,root)
 %exclude /usr/clearos/apps/password_policies/packaging
-%exclude /usr/clearos/apps/password_policies/tests
 %dir /usr/clearos/apps/password_policies
 /usr/clearos/apps/password_policies/deploy
 /usr/clearos/apps/password_policies/language
