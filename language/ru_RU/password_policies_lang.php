@@ -4,11 +4,11 @@
 
 $lang['password_policies_account_lockout'] = 'Account Lockout';
 $lang['password_policies_app_description'] = 'The Password Policy app is used to fine tune user password policy rules.  This enforces passwords that meet your criteria and helps to make your system more secure.';
-$lang['password_policies_app_name'] = 'Password Policies';
-$lang['password_policies_history_size'] = 'History Size';
-$lang['password_policies_maximum_password_age'] = 'Maximum Password Age';
-$lang['password_policies_minimum_password_age'] = 'Minimum Password Age';
-$lang['password_policies_minimum_password_length'] = 'Minimum Password Length';
-$lang['password_policies_modify_any_time'] = 'Modify Any Time';
-$lang['password_policies_no_expire'] = 'No Expire';
-$lang['password_policies_no_history'] = 'No History';
+$lang['password_policies_app_name'] = 'Политика паролей';
+$lang['password_policies_history_size'] = 'Размер истории';
+$lang['password_policies_maximum_password_age'] = 'Максимальный срок действия пароля';
+$lang['password_policies_minimum_password_age'] = 'Минимальный срок действия пароля';
+$lang['password_policies_minimum_password_length'] = 'Минимальная длина пароля';
+$lang['password_policies_modify_any_time'] = 'Изменить любое время';
+$lang['password_policies_no_expire'] = 'Не истикает';
+$lang['password_policies_no_history'] = 'Без истории';
