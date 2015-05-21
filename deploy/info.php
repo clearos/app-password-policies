@@ -5,7 +5,7 @@
 /////////////////////////////////////////////////////////////////////////////
 
 $app['basename'] = 'password_policies';
-$app['version'] = '1.6.7';
+$app['version'] = '1.6.8';
 $app['release'] = '1';
 $app['vendor'] = 'ClearFoundation';
 $app['packager'] = 'ClearFoundation';
@@ -36,6 +36,10 @@ $app['core_requires'] = array(
 );
 
 $app['core_file_manifest'] = array(
+    'accounts-event'=> array(
+        'target' => '/var/clearos/events/accounts/password_policies',
+        'mode' => '0755'
+    ),
     'password-policies-synchronize' => array(
         'target' => '/usr/sbin/password-policies-synchronize',
         'mode' => '0755',
