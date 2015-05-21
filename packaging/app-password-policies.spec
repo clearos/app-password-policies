@@ -1,7 +1,7 @@
 
 Name: app-password-policies
 Epoch: 1
-Version: 2.0.24
+Version: 2.1.0
 Release: 1%{dist}
 Summary: Password Policies
 License: GPLv3

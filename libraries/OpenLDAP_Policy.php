@@ -52,14 +52,15 @@ clearos_load_language('password_policies');
 // D E P E N D E N C I E S
 ///////////////////////////////////////////////////////////////////////////////
 
-// Classes
-//--------
-
 use \clearos\apps\base\Engine as Engine;
+use \clearos\apps\mode\Mode_Engine as Mode_Engine;
+use \clearos\apps\mode\Mode_Factory as Mode_Factory;
 use \clearos\apps\openldap\LDAP_Driver as LDAP_Driver;
 use \clearos\apps\openldap_directory\OpenLDAP as OpenLDAP;
 
 clearos_load_library('base/Engine');
+clearos_load_library('mode/Mode_Engine');
+clearos_load_library('mode/Mode_Factory');
 clearos_load_library('openldap/LDAP_Driver');
 clearos_load_library('openldap_directory/OpenLDAP');
 
@@ -239,6 +240,12 @@ class OpenLDAP_Policy extends Engine
     {
         clearos_profile(__METHOD__, __LINE__);
 
+        $mode_object = Mode_Factory::create();
+        $mode = $mode_object->get_mode();
+
+        if ($mode === Mode_Engine::MODE_SLAVE)
+            return;
+
         $ldap = new LDAP_Driver();
         $ldaph = $ldap->get_ldap_handle();
 
@@ -266,6 +273,7 @@ class OpenLDAP_Policy extends Engine
         $users_container = OpenLDAP::get_users_container();
 
         foreach ($userlist as $user) {
+            clearos_log('password_policies', 'updated policy reference for user: ' . $user);
             $userdn = 'cn=' . $user . ',' . $users_container; 
             $ldap_object['pwdPolicySubentry'] = $dn;
             $ldaph->modify($userdn, $ldap_object);
